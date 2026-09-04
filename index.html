@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="GATM FIT PRO — entrenamiento, nutrición y progreso con IA.">
+  <meta property="og:title" content="GATM FIT PRO">
+  <link rel="canonical" href="./">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/icon.svg">
+  <link rel="apple-touch-icon" href="./assets/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <title>GATM FIT PRO</title>
+</head>
+<body>
+<div id="trialBanner" class="trial-banner">Te quedan <span id="trialDays">15</span> días de tu prueba gratuita. ¡Aprovecha al máximo!</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- PUBLIC LANDING -->
+<div id="publicApp">
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="GATM FIT PRO inicio">
+      <span class="brand-logo">G</span>
+      <span>GATM <strong>FIT</strong></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#entrenamiento">Entrenamiento</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-ghost" id="openLogin">Ingresar</button>
+      <button class="btn btn-lime" id="openRegister">Empezar Gratis</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow">FITNESS POWERED BY AI</div>
+        <h1>El plan perfecto.<br><span>Hecho para ti.</span></h1>
+        <p class="hero-lead">
+          GATM FIT PRO utiliza Inteligencia Artificial avanzada (Gemini Pro) para adaptar tu entrenamiento y nutrición a tus objetivos, tiempo y equipamiento.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-lime btn-xl" id="heroStart">Crear mi cuenta (15 días gratis) <span>→</span></button>
+        </div>
+        <div class="hero-proof">
+          <span>✓ Rutinas hiper-personalizadas</span>
+          <span>✓ Nutrición adaptativa</span>
+          <span>✓ Sincronización en la nube</span>
+        </div>
+      </div>
+
+      <div class="hero-mockup" aria-label="Vista previa del dashboard">
+        <div class="glow"></div>
+        <div class="phone-shell">
+          <div class="phone-greeting">Hola, Atleta.</div>
+          <div class="mini-stat-row">
+            <div><small>OBJETIVO</small><b>Recomp.</b></div>
+            <div><small>RACHA</small><b>12 días</b></div>
+          </div>
+          <div class="mock-card lime-card">
+            <small>HOY · 45 MIN</small>
+            <b>Full Body Inteligente</b>
+            <em>4 ejercicios · Creado por IA</em>
+          </div>
+          <div class="mock-card">
+            <small>NUTRICIÓN</small>
+            <b>Menú Generado</b>
+            <em>Usando tus ingredientes disponibles</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-strip section" id="como-funciona">
+      <div><span class="feature-number">01</span><h3>Conócete</h3><p>Ingresa tu perfil, nivel, tiempo disponible y alergias.</p></div>
+      <div><span class="feature-number">02</span><h3>IA Genera</h3><p>Gemini Pro analiza tus datos y diseña un plan único.</p></div>
+      <div><span class="feature-number">03</span><h3>Entrena</h3><p>Sigue tu rutina paso a paso desde cualquier dispositivo.</p></div>
+      <div><span class="feature-number">04</span><h3>Evoluciona</h3><p>Guarda tu progreso en la nube con Firebase.</p></div>
+    </section>
+  </main>
+</div>
+
+<!-- AUTH -->
+<section id="authScreen" class="auth-screen hidden">
+  <div class="auth-left">
+    <button class="btn btn-ghost" id="backToLanding" style="margin-bottom: 40px; padding: 0;">← Volver</button>
+    <div class="eyebrow">GATM FIT PRO</div>
+    <h2>Tu entrenador<br><span>digital personal.</span></h2>
+    <p>Guarda tu evolución de forma segura en la nube y accede desde cualquier dispositivo.</p>
+  </div>
+  <div class="auth-card">
+    <div class="auth-switch">
+      <button class="active" data-auth-mode="login">Iniciar sesión</button>
+      <button data-auth-mode="register">Crear cuenta</button>
+    </div>
+    <form id="authForm">
+      <label>Email<input id="authEmail" type="email" required autocomplete="email" placeholder="tu@email.com"></label>
+      <label>Contraseña<input id="authPass" type="password" required autocomplete="current-password" placeholder="••••••••"></label>
+      <button type="submit" class="btn btn-lime btn-full" id="authSubmit">Entrar</button>
+    </form>
+  </div>
+</section>
+
+<!-- APP -->
+<section id="appScreen" class="app-screen hidden">
+  <header class="app-header">
+    <a class="brand" href="#"><span class="brand-logo small">G</span><span>GATM <strong>FIT</strong></span></a>
+    <div class="app-header-actions">
+      <button class="avatar" id="profileBubble">G</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <button class="side-item active" data-view="dashboard"><span>⌂</span><b>Inicio</b></button>
+      <button class="side-item" data-view="training"><span>◈</span><b>Rutina</b></button>
+      <button class="side-item" data-view="nutritionView"><span>◉</span><b>Nutrición</b></button>
+      <button class="side-item" data-view="progressView"><span>↗</span><b>Progreso</b></button>
+      <button class="side-item" data-view="profileView"><span>◎</span><b>Perfil</b></button>
+      <button class="side-item logout" id="logout"><span>↪</span><b>Salir</b></button>
+    </aside>
+
+    <main class="app-main">
+      <!-- Dashboard -->
+      <section class="app-view active" id="dashboard">
+        <div class="app-head">
+          <div><h1 id="dashboardGreeting">Hola.</h1><p id="dashboardSub">Configura tu perfil para comenzar.</p></div>
+          <button class="btn btn-lime" id="generatePlanBtn">✦ Generar plan con IA</button>
+        </div>
+        <div id="dashboardStats" class="dashboard-stats"></div>
+        <div class="dashboard-layout">
+          <article class="dash-hero">
+            <div class="eyebrow lime">COACH IA (GEMINI PRO)</div>
+            <h2 id="planTitle">Diseñado alrededor de tu vida.</h2>
+            <p id="planSummary">La Inteligencia artificial combinará tu objetivo, nivel, disponibilidad, equipamiento y alimentación.</p>
+          </article>
+          <div class="dash-right">
+            <article class="dash-card" style="margin-bottom: 16px;">
+              <div class="card-head"><h3>Hoy</h3><span id="todayDate"></span></div>
+              <div id="todayWorkout"></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Training -->
+      <section class="app-view" id="training">
+        <div class="app-head"><div><h1>Entrenamiento</h1><p>Tu sesión adaptada por IA.</p></div></div>
+        <div id="trainingContent"></div>
+      </section>
+
+      <!-- Nutrition -->
+      <section class="app-view" id="nutritionView">
+        <div class="app-head"><div><h1>Nutrición</h1><p>Menú generado con tus ingredientes.</p></div></div>
+        <div id="nutritionContent"></div>
+      </section>
+
+      <!-- Progress -->
+      <section class="app-view" id="progressView">
+        <div class="app-head"><div><h1>Progreso</h1><p>Sincronizado en la nube.</p></div><button class="btn btn-lime" id="newProgress">＋ Registrar Peso</button></div>
+        <div id="progressContent"></div>
+      </section>
+
+      <!-- Profile -->
+      <section class="app-view" id="profileView">
+        <div class="app-head"><div><h1>Mi perfil</h1><p>Cuanto más detallado, mejor será el plan generado por la IA.</p></div></div>
+        <form class="profile-form" id="profileForm">
+          <div class="form-block"><div class="form-title"><h3>Identidad</h3></div><div class="form-grid"><label>Nombre<input name="name"></label><label>Edad<input name="age" type="number"></label><label>Género<select name="gender"><option>Prefiero no indicar</option><option>Femenino</option><option>Masculino</option></select></label></div></div>
+          <div class="form-block"><div class="form-title"><h3>Objetivo</h3></div><div class="form-grid"><label>Peso (kg)<input name="weight" type="number" step=".1"></label><label>Talla (cm)<input name="height" type="number"></label><label>Objetivo<select name="goal"><option>Perder grasa</option><option>Ganar masa muscular</option><option>Recomposición corporal</option></select></label><label>Nivel<select name="level"><option>Principiante</option><option>Intermedio</option><option>Avanzado</option></select></label></div></div>
+          <div class="form-block"><div class="form-title"><h3>Entrenamiento</h3></div><div class="form-grid"><label>Días por semana<input name="days" type="number" min="1" max="7"></label><label>Minutos por sesión<input name="minutes" type="number" min="10" max="180"></label><label>Lugar<select name="space"><option>Casa</option><option>Gimnasio</option><option>Mixto</option></select></label><label>Equipamiento<input name="equipment" placeholder="Mancuernas, ligas..."></label></div></div>
+          <div class="form-block"><div class="form-title"><h3>Nutrición</h3></div><div class="form-grid"><label>Preferencia<select name="diet"><option>Omnívora</option><option>Vegetariana</option><option>Vegana</option></select></label><label>Comidas al día<input name="meals" type="number" min="2" max="6"></label></div><label>Ingredientes disponibles<textarea name="ingredients" placeholder="Pollo, arroz, huevos..."></textarea></label><label>Alergias / Evitar<textarea name="avoid"></textarea></label></div>
+          <div class="form-actions"><button class="btn btn-lime" type="submit" id="saveProfileBtn">Guardar Perfil</button></div>
+        </form>
+      </section>
+    </main>
+  </div>
+</section>
+
+<!-- MODALS -->
+<div class="modal hidden" id="progressModal">
+  <form class="modal-card" id="progressForm">
+    <button class="modal-close" type="button" id="progressClose">×</button>
+    <h2 style="margin-top:0">Registrar progreso</h2>
+    <label>Peso (kg)<input name="weight" type="number" step=".1" required></label>
+    <label>Cintura (cm)<input name="waist" type="number" step=".1"></label>
+    <button class="btn btn-lime btn-full" type="submit" id="saveProgressBtn" style="margin-top:20px">Guardar en la nube</button>
+  </form>
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

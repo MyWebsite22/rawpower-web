@@ -1,0 +1,20 @@
+{
+  "name": "gatm-fit-pro",
+  "version": "2.0.0",
+  "description": "GATM FIT PRO with Gemini AI, Firebase, and Capacitor",
+  "scripts": {
+    "start": "npx serve .",
+    "cap:init": "npx cap init 'GATM FIT PRO' 'com.gatm.fitpro' --web-dir .",
+    "cap:add:android": "npx cap add android",
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@google/genai": "^0.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}

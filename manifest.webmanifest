@@ -1,0 +1,36 @@
+{
+  "name": "GATM FIT PRO",
+  "short_name": "GATM FIT",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#08090b",
+  "theme_color": "#090b0d",
+  "orientation": "portrait-primary",
+  "description": "Entrenamiento, nutrición y progreso diseñados para ti.",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Entrenamiento",
+      "short_name": "Entrenar",
+      "url": "./#training"
+    },
+    {
+      "name": "Nutrición",
+      "short_name": "Nutrición",
+      "url": "./#nutritionView"
+    },
+    {
+      "name": "Progreso",
+      "short_name": "Progreso",
+      "url": "./#progressView"
+    }
+  ]
+}

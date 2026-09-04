@@ -1,0 +1,6 @@
+{
+  "appId": "com.gatm.fitpro",
+  "appName": "GATM FIT PRO",
+  "webDir": ".",
+  "bundledWebRuntime": false
+}
